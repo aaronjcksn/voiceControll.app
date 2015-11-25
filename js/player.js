@@ -148,3 +148,42 @@ searchSpecificSong: function (keyword) {
     return e;
   }
 },
+
+// Speech API
+speak: function (text, scope) {
+  var message = new SpeechSynthesisUtterance(text.replace("-", " "));
+  message.rate = 1;
+  window.speechSynthesis.speak(message);
+  if (scope) {
+    message.onend = function () {
+      scope.play();
+    }
+  }
+},
+processCommands: function (cmd) {
+  this.changeLastCommand(cmd);
+  var playSpecific = cmd.match(/play\s*(.+)$/);
+  if (playSpecific) {
+    this.seachSpecificSong(playSpecific[1]);
+    return;
+  }
+  switch(cmd) {
+    case "play":
+      this.play();
+      break;
+    case "pause":
+      this.stop();
+      break;
+    case "stop":
+      this.stop(true);
+      break;
+    case "next":
+      this.next();
+      break;
+    case "previous":
+      this.prev();
+      break;
+    default:
+      this.speak("Your command was invalid!", false);
+  }
+}
