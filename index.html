@@ -4,10 +4,29 @@
     <meta charset="utf-8">
     <title>Voice Controlled Audio Player</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
     <div class="container">
       <h1>Voice Controlled Audio Player</h1>
+
+      <div class="col-md-12">
+        <p class="big">Contextual</p>
+        <p>Last Command: <span class="1-command"></span></p>
+        <p>Status: <span class="status"></span></p>
+      </div>
+      <div class="col-md-5">
+        <p class="big text-center"><span class="glyphicon glyphicon-info-sign"></span> Available Commands: </p>
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-success"><strong>Play</strong> - Plays the current song or starts the first song.</li>
+          <li class="list-group-item list-group-item-success"><strong>Stop</strong> - Stops the the current song and nullifies the playback time.</li>
+          <li class="list-group-item list-group-item-success"><strong>Pause</strong> - Pauses the current song.</li>
+          <li class="list-group-item list-group-item-success"><strong>Next</strong> - Plays the next song in the list.</li>
+          <li class="list-group-item list-group-item-success"><strong>Previous</strong> - Plays the previous song in the list.</li>
+          <li class="list-group-item list-group-item-success"><strong>Play &lt;slice from song's or singer's name&gt;</strong></li>
+          <li class="list-group-item list-group-item-success"><strong>The songs are taken from a <a href="#">http://freemusicarchive.org</a></strong></li>
+        </ul>
+      </div>
     </div>
   </body>
   <script type="text/javascript" src="js/main.js"></script>
